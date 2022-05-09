@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Volume Styles App</string>
+    <string name="get_started">Get Started</string>
+    <string name="customize_your_volume_styles_nin_a_better_way">Customize Your Volume Styles \nin a better way</string>
+    <string name="volume_styles">Volume Styles</string>
+    <string name="permissions">Permissions</string>
+    <string name="the_following_permissions_are_required_to_use_the_app">The Following Permissions are required to\n use the app</string>
+    <string name="accessibility_service">Accessibility Service</string>
+    <string name="required_to_show_the_custom_volume_panel_when_volume_keys_are_pressed">Required to show the custom volume panel when volume keys are pressed.</string>
+    <string name="welcome">Welcome!</string>
+    <string name="customize_your_volume_styles">Customize Your Volume Styles</string>
+    <string name="volume_slider_height">Volume Slider Height</string>
+    <string name="time_on_screen">Time On Screen</string>
+    <string name="more">More</string>
+    <string name="settings">Settings</string>
+    <string name="position">Position</string>
+    <string name="vertical_position">Vertical position</string>
+    <string name="Left">Left</string>
+    <string name="Right">Right</string>
+    <string name="share">Share</string>
+    <string name="privacypolicy">PrivacyPolicy</string>
+    <string name="update">Update</string>
+    <string name="reset_to_default">Reset to default</string>
+    <string name="background_color">Background Color</string>
+    <string name="accent_color">Progress Color</string>
+    <string name="accessibility_service_description">accessibility_service_description</string>
+    <string name="exit" />
+    <string name="volume_style_app">Volume Styles App</string>
+    <string name="are_you_sure_to_exit_nvolume_styles">Are you sure to Exit Volume\nStyles App?</string>
+
+
+    <array name="initial_range_slider_values">
+        <item>20.0</item>
+        <item>80.0</item>
+    </array>
+</resources>

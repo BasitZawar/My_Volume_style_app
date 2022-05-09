@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lads.myvolumeapp">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <uses-permission
+        android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_adaptive_fore"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_adaptive_fore"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyVolumeApp">
+
+        <activity
+            android:name=".Activities.MoreActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SkinsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activities.PermissionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Activities.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <service
+            android:name=".Services.MyAccessibilityService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/volume_style_app"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <service
+            android:name=".Services.ForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

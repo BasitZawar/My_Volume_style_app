@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.lads.myvolumeapp.Classes.SeekbarRotator
+                        android:id="@+id/SeekBar_Rotator_Ring"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:layout_marginTop="3dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <SeekBar
+                            android:id="@+id/window10_musicseekbar"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:progressBackgroundTint="#B2619FFF"
+                            android:progressTint="#619FFF"
+                            android:splitTrack="false"
+                            android:thumb="@drawable/custom_thumb" />
+                    </com.lads.myvolumeapp.Classes.SeekbarRotator>
+
+                    <ImageView
+                        android:id="@+id/music_icon_window10"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/ic_blue_music_note_android10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.571"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SeekBar_Rotator_Ring"
+                        app:layout_constraintVertical_bias="0.107" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:id="@+id/hidden_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="45dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.lads.myvolumeapp.Classes.SeekbarRotator
+                            android:id="@+id/SeekBarRotatorVoiceCall4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.957"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <SeekBar
+                                android:id="@+id/window10_call_seekbar"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:progressBackgroundTint="#B2619FFF"
+                                android:progressTint="#619FFF"
+                                android:splitTrack="false"
+                                android:thumb="@drawable/custom_thumb" />
+                        </com.lads.myvolumeapp.Classes.SeekbarRotator>
+
+                        <ImageView
+                            android:id="@+id/callicon_window10"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:src="@drawable/ic_blue_call_android"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.571"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/SeekBarRotatorVoiceCall4"
+                            app:layout_constraintVertical_bias="0.107" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.lads.myvolumeapp.Classes.SeekbarRotator
+                            android:id="@+id/SeekBarRotatorVoiceCall3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.957"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <SeekBar
+                                android:id="@+id/window10_alarm_seekbar"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:progressBackgroundTint="#B2619FFF"
+                                android:progressTint="#619FFF"
+                                android:splitTrack="false"
+                                android:thumb="@drawable/custom_thumb" />
+                        </com.lads.myvolumeapp.Classes.SeekbarRotator>
+
+                        <ImageView
+                            android:id="@+id/alarmicon_window10"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:src="@drawable/ic_blue_alarm_android10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.571"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/SeekBarRotatorVoiceCall3"
+                            app:layout_constraintVertical_bias="0.107" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.lads.myvolumeapp.Classes.SeekbarRotator
+                            android:id="@+id/SeekBarRotatorVoiceCall2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.957"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <SeekBar
+                                android:id="@+id/window10_ringseekbar"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:progressBackgroundTint="#B2619FFF"
+                                android:progressTint="#619FFF"
+                                android:splitTrack="false"
+                                android:thumb="@drawable/custom_thumb" />
+                        </com.lads.myvolumeapp.Classes.SeekbarRotator>
+
+                        <ImageView
+                            android:id="@+id/ring_icon_window10"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:src="@drawable/ic_blue_notifications_android10"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.571"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/SeekBarRotatorVoiceCall2"
+                            app:layout_constraintVertical_bias="0.107" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

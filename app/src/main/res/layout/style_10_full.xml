@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_height="match_parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/musiccardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView_ui2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardView_ui2"
+                app:layout_constraintTop_toTopOf="@+id/cardView_ui2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sideConstraint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <com.lads.myvolumeapp.Classes.SeekbarRotator
+                        android:id="@+id/SeekBar_Rotator_Ring"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <SeekBar
+                            android:id="@+id/oneUi_2_musicseekbar"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:progressBackgroundTint="#B2438CFB"
+                            android:progressTint="#438CFB"
+                            android:splitTrack="false"
+                            android:thumb="@drawable/no_thumb"
+                            android:thumbTint="#438CFB" />
+                    </com.lads.myvolumeapp.Classes.SeekbarRotator>
+
+                    <ImageView
+                        android:id="@+id/music_icon_oneUi_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginBottom="3dp"
+                        android:src="@drawable/ic_music_ui2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.571"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SeekBar_Rotator_Ring" />
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/btn_show_oneUi_2"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_marginTop="16dp"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:src="@drawable/ic_show_more_ui2"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/music_icon_oneUi_2" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_ui2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/musiccardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/horizontalConstraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/hidden_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Ring"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!--Child LinearLayout 1-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/oneUi_2_ringicon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_notifications_ui2" />
+
+                    <SeekBar
+                        android:id="@+id/oneUi_2_ringseekbar"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:progressBackgroundTint="#B2438CFB"
+                        android:progressTint="#468EFC"
+                        android:thumb="@drawable/no_thumb"
+                        android:thumbTint="#468EFC"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="Alarm"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!--Child LinearLayout 2-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/oneUi_2_alarmicon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_alarm_ui2" />
+
+                    <SeekBar
+                        android:id="@+id/oneUi_2_alarmseekbar"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:progressBackgroundTint="#B2438CFB"
+                        android:progressTint="#468EFC"
+                        android:thumb="@drawable/no_thumb"
+                        android:thumbTint="#468EFC"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="Voice call"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!--Child LinearLayout 3-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/oneUi_2_callicon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp"
+
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ic_call_ui2" />
+
+                    <SeekBar
+                        android:id="@+id/oneUi_2_callseekbar"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:progressBackgroundTint="#B2438CFB"
+                        android:progressTint="#468EFC"
+                        android:thumb="@drawable/no_thumb"
+                        android:thumbTint="#468EFC"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>

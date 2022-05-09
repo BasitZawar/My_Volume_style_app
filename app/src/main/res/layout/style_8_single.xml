@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.lukelorusso.verticalseekbar.VerticalSeekBar
+            android:id="@+id/android11_music_seekbar"
+            android:layout_width="40dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:vsb_bar_corner_radius="20dp"
+            app:vsb_bar_width="40dp"
+            app:vsb_click_to_set_progress="true"
+            app:vsb_show_thumb="true"
+            app:vsb_thumb_container_corner_radius="100dp"
+            app:vsb_use_thumb_to_set_progress="true" />
+        <!--    app:vsb_bar_background="#E2E3E5"-->
+        <!--    app:vsb_progress="20"-->
+        <!--    app:vsb_bar_progress_gradient_end="#FFFF"-->
+        <!--    app:vsb_bar_progress_gradient_start="#F5FFFFFF"-->
+
+
+        <ImageView
+            android:id="@+id/android11_music_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/ic_music_window10"
+            app:layout_constraintBottom_toBottomOf="@+id/android11_music_seekbar"
+            app:layout_constraintEnd_toEndOf="@+id/android11_music_seekbar"
+            app:layout_constraintStart_toStartOf="@+id/android11_music_seekbar"
+            app:layout_constraintTop_toTopOf="@+id/android11_music_seekbar" />
+
+        <ImageButton
+            android:id="@+id/btn_show_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/slider_track"
+            android:src="@drawable/ic_show_more_android11"
+            app:layout_constraintEnd_toEndOf="@+id/android11_music_seekbar"
+            app:layout_constraintStart_toStartOf="@+id/android11_music_seekbar"
+            app:layout_constraintTop_toTopOf="@+id/android11_music_seekbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

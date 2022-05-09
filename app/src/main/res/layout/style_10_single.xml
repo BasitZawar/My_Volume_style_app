@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/musiccardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.lads.myvolumeapp.Classes.SeekbarRotator
+                android:id="@+id/SeekBar_Rotator_Ring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.957"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingClass">
+
+                <SeekBar
+                    android:id="@+id/oneUi_2_musicseekbar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:progressBackgroundTint="#B2438CFB"
+                    android:progressTint="#438CFB"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/no_thumb"
+                    android:thumbTint="#438CFB" />
+            </com.lads.myvolumeapp.Classes.SeekbarRotator>
+
+            <ImageView
+                android:id="@+id/music_icon_oneUi_2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/ic_music_ui2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SeekBar_Rotator_Ring" />
+
+            <ImageButton
+                android:id="@+id/btn_show_more"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/ic_show_more_ui2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/music_icon_oneUi_2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
