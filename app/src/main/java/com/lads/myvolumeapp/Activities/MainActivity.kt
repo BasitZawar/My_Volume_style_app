@@ -1,8 +1,5 @@
 package com.lads.myvolumeapp.Activities
 
-//import android.os.Bundle
-
-
 import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
@@ -14,13 +11,15 @@ import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.lads.myvolumeapp.Services.ForegroundService
+import com.lads.myvolumeapp.Util.PrefUtil
 import com.lads.myvolumeapp.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var backgroundDialog: BackgroundDialog
+    private var prefUtil: PrefUtil? = null
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             window.setStatusBarColor(this.resources.getColor(com.lads.myvolumeapp.R.color.theme))
         }
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         backgroundDialog = BackgroundDialog(this@MainActivity)
         setContentView(binding.root)
@@ -40,6 +38,14 @@ class MainActivity : AppCompatActivity() {
         var backgroundDialog: BackgroundDialog
 
         val serviceIntent = Intent(this, ForegroundService::class.java)
+//        val serviceIntent = Intent(this, BackgroundService::class.java)
+        if (isMyServiceRunning(ForegroundService::class.java)) {
+            binding.txtStart.setText("Stop")
+            binding.startIcon.setImageResource(com.lads.myvolumeapp.R.drawable.ic_stop)
+        } else {
+            binding.txtStart.setText("Start")
+            binding.startIcon.setImageResource(com.lads.myvolumeapp.R.drawable.ic_start_icon)
+        }
 
         binding.card1Lay.setOnClickListener {
             if (!isMyServiceRunning(ForegroundService::class.java)) {
@@ -53,6 +59,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 stopService(serviceIntent)
                 binding.txtStart.setText("Start")
+
                 binding.startIcon.setImageResource(com.lads.myvolumeapp.R.drawable.ic_start_icon)
             }
         }
@@ -72,17 +79,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun updateTextStatus() {
-//        if (isMyServiceRunning(ForegroundService::class.java, true)) {
-//            findViewById<TextView>(R.id.txtStart)?.text = "Stop"
-//        } else {
-//            findViewById<TextView>(R.id.txtStart)?.text = "Start"
-//        }
-//    }
-
     private fun isMyServiceRunning(serviceClass: Class<*>): Boolean {
         try {
-
             val manager =
                 getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
             for (service in manager.getRunningServices(
@@ -100,13 +98,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         var close: Boolean? = null
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        val serviceIntent = Intent(this, ForegroundService::class.java)
-
-        stopService(serviceIntent)
     }
 
     override fun onBackPressed() {

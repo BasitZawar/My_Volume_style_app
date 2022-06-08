@@ -19,8 +19,6 @@ class ForegroundService : Service() {
 
     @SuppressLint("NewApi")
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-
-        Toast.makeText(this, "Service Started", Toast.LENGTH_SHORT).show()
         if (intent.action === "ACTION_STOP") {
             stopSelf()
             Log.d("TAG", "ACTION_STOP: ")
@@ -30,14 +28,15 @@ class ForegroundService : Service() {
 
         // Service action intent
         val notificationIntent = Intent(this, ForegroundService::class.java)
+
         notificationIntent.action = "ACTION_STOP"
         val servicePendingIntent = PendingIntent.getService(
             this,
-            0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT
+            0, notificationIntent, PendingIntent.FLAG_IMMUTABLE
         )
         // on notification click intent
         val mainActivityIntent = Intent(this, MainActivity::class.java)
-        val activityPendingIntent = PendingIntent.getActivity(
+        val activityPendingIntent: PendingIntent = PendingIntent.getActivity(
             this,
             0, mainActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT
         )
@@ -46,7 +45,9 @@ class ForegroundService : Service() {
             .setContentText(input)
             .setSmallIcon(R.drawable.ic_dialog_alert)
             .setContentIntent(activityPendingIntent)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .addAction(R.drawable.ic_media_pause, "Stop", servicePendingIntent)
+            .setAutoCancel(true)
             .build()
         startForeground(1, notification)
         //do heavy work on a background thread
@@ -73,13 +74,14 @@ class ForegroundService : Service() {
     }
 
     override fun onCreate() {
+        Toast.makeText(this, "Service Started", Toast.LENGTH_SHORT).show()
         super.onCreate()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        stopSelf()
-        stopForeground(true)
+//        stopSelf()
+//        stopForeground(true)
         Toast.makeText(this, "Service Stopped", Toast.LENGTH_SHORT).show()
 
     }

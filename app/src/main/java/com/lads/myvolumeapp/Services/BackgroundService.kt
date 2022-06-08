@@ -12,7 +12,7 @@ class BackgroundService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         onTaskRemoved(intent)
-        Toast.makeText(this, "Service Started", Toast.LENGTH_SHORT).show()
+
 
         return START_STICKY
     }
@@ -30,6 +30,10 @@ class BackgroundService : Service() {
         super.onTaskRemoved(rootIntent)
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        Toast.makeText(this, "Service Started", Toast.LENGTH_SHORT).show()
+    }
     override fun onDestroy() {
         super.onDestroy()
         Toast.makeText(this, "Service Stopped", Toast.LENGTH_SHORT).show()

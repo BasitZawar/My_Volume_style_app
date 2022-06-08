@@ -4,6 +4,7 @@
     package="com.lads.myvolumeapp">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<!--    <uses-permission android:name="android.permission.BACKGROUND_SERVICE" />-->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
@@ -72,6 +73,10 @@
             android:name=".Services.ForegroundService"
             android:enabled="true"
             android:exported="true" />
+<!--                <service-->
+<!--                    android:name=".Services.BackgroundService"-->
+<!--                    android:enabled="true"-->
+<!--                    android:exported="true" />-->
     </application>
 
 </manifest>
